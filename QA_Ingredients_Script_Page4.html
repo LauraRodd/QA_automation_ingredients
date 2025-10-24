@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ingredients QA Script</title>
+<style>
+body {
+    font-family: Inter, sans-serif;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 30px;
+    background: #f9fafb;
+}
+.hero {
+    background: linear-gradient(135deg, #283545, #A82342);
+    color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+.box {
+    background: white;
+    border: 2px solid #283545;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+}
+.drag-link {
+    display: inline-block;
+    background: #A82342;
+    color: white;
+    padding: 16px 32px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: all 0.3s;
+    cursor: move;
+}
+.drag-link:hover {
+    background: #283545;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(40, 53, 69, 0.3);
+}
+.feature-badge {
+    display: inline-block;
+    background: #10B981;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-left: 8px;
+}
+</style>
+</head>
+<body>
+
+<div class="hero">
+<h1>🧪 Ingredients QA Script</h1>
+<p>v3.1 - October 24, 2025 <span style="background:rgba(255,255,255,0.2);padding:4px 12px;border-radius:12px;font-size:0.9rem;">🔄 Auto-Updates from Spreadsheet</span></p>
+</div>
+
+<div class="box">
+<h2>🚀 Easy Installation</h2>        
+    <p><strong>Just drag the button below to your bookmarks bar:</strong></p>
+    <div style="text-align:center; padding:2rem; background:#f0f0f0; border-radius:8px; margin:1rem 0;">
+        <a href="javascript:(function(){const e=&quot;https://docs.google.com/spreadsheets/d/e/2PACX-1vQ1nadtCyxsEZMN6BjuDCL1AhvzDhOt0GLNvAIbKbdfjPwb7ScAgj1gal9abvojjA/pub?output=xlsx&quot;,t={primary:&quot;#283545&quot;,accent:&quot;#A82342&quot;,success:&quot;#10B981&quot;,error:&quot;#EF4444&quot;,light:&quot;#f9fafb&quot;,border:&quot;#ddd&quot;},n={int:&quot;International&quot;,at:&quot;Austria&quot;,bg:&quot;Bulgaria&quot;,es:&quot;Spain&quot;,fr:&quot;France&quot;,hu:&quot;Hungary&quot;,pl:&quot;Poland&quot;,ro:&quot;Romania&quot;,rs:&quot;Serbia&quot;};function o(){const e=document.createElement(&quot;div&quot;);return e.id=&quot;qaLoading&quot;,e.style.cssText=`position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:white;border:2px solid ${t.primary};border-radius:12px;padding:40px;box-shadow:0 8px 32px rgba(0,0,0,0.2);z-index:999999;text-align:center;font-family:Inter,sans-serif`,e.innerHTML=`&lt;h2 style=&quot;margin:0 0 20px 0;color:${t.primary}&quot;&gt;🧪 Loading QA Tool&lt;/h2&gt;&lt;p style=&quot;margin:0;color:#666&quot;&gt;Fetching latest data from reference database...&lt;/p&gt;&lt;div style=&quot;margin-top:20px;width:200px;height:4px;background:#f0f0f0;border-radius:2px;overflow:hidden&quot;&gt;&lt;div style=&quot;width:30%;height:100%;background:${t.accent};border-radius:2px;animation:loading 1.5s infinite&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;style&gt;@keyframes loading{0%,100%{margin-left:0}50%{margin-left:70%}}&lt;/style&gt;`,document.body.appendChild(e),e}function r(e,n,o=null){const r=document.getElementById(&quot;ingredientErrorPanel&quot;);r&amp;&amp;r.remove();const a=document.createElement(&quot;div&quot;);a.id=&quot;ingredientErrorPanel&quot;,a.style.cssText=&quot;position:fixed;top:30px;right:30px;width:400px;background:#fee2e2;border:2px solid #dc2626;border-radius:12px;padding:20px 24px;box-shadow:0 12px 42px rgba(220,38,38,0.12);font-family:Inter,sans-serif;color:#991b1b;z-index:99999&quot;;const i=document.createElement(&quot;button&quot;);i.innerText=&quot;✕&quot;,i.style.cssText=&quot;position:absolute;top:8px;right:8px;background:none;border:none;color:#dc2626;font-size:22px;font-weight:bold;cursor:pointer&quot;,i.onclick=()=&gt;a.remove(),a.appendChild(i),a.innerHTML+=`&lt;h2 style=&quot;margin:0 0 10px 0&quot;&gt;${e}&lt;/h2&gt;&lt;div style=&quot;margin-bottom:8px&quot;&gt;${n}&lt;/div&gt;${o?`&lt;pre style=&quot;background:#fff0f6;padding:6px;border-radius:6px;font-size:12px;max-height:200px;overflow:auto&quot;&gt;${o}&lt;/pre&gt;`:&quot;&quot;}`,document.body.appendChild(a),setTimeout(()=&gt;a.remove(),15e3)}function a(){return new Promise((e,t)=&gt;{if(window.XLSX)return void e(window.XLSX);const n=document.createElement(&quot;script&quot;);n.src=&quot;https://cdn.sheetjs.com/xlsx-0.20.1/package/dist/xlsx.full.min.js&quot;,n.onload=()=&gt;e(window.XLSX),n.onerror=()=&gt;t(new Error(&quot;Failed to load Excel parser&quot;)),document.head.appendChild(n)})}async function i(){try{const t=await a(),n=`${e}&amp;_=${Date.now()}`,o=await fetch(n,{cache:&quot;no-store&quot;,headers:{&quot;Cache-Control&quot;:&quot;no-cache, no-store, must-revalidate&quot;,Pragma:&quot;no-cache&quot;}});if(!o.ok)throw new Error(`HTTP ${o.status}: ${o.statusText}`);const r=await o.arrayBuffer(),i=t.read(r,{type:&quot;array&quot;}),l={universal:{allowedEnglish:[]}};return i.SheetNames.forEach(e=&gt;{const n={Universal:&quot;universal&quot;,INT:&quot;int&quot;,FR:&quot;fr&quot;,RS:&quot;rs&quot;,RO:&quot;ro&quot;,HU:&quot;hu&quot;,AT:&quot;at&quot;,ES:&quot;es&quot;,BG:&quot;bg&quot;,PL:&quot;pl&quot;}[e];if(!n)return;const o=i.Sheets[e],r=t.utils.sheet_to_json(o,{defval:&quot;&quot;});&quot;universal&quot;===n?l.universal.allowedEnglish=r.map(e=&gt;e[&quot;Key Ingredients&quot;]).filter(e=&gt;e&amp;&amp;String(e).trim()):l[n]={key:r.map(e=&gt;e[&quot;Key Ingredients (Should be Linked)&quot;]).filter(e=&gt;e&amp;&amp;String(e).trim()),renamedOld:r.map(e=&gt;e[&quot;Old Name&quot;]).filter(e=&gt;e&amp;&amp;String(e).trim()),removed:r.map(e=&gt;e[&quot;Ingredients Removed&quot;]).filter(e=&gt;e&amp;&amp;String(e).trim())}}),l}catch(e){throw new Error(`Failed to load from Google Sheets: ${e.message}`)}}function l(e){return e?String(e).trim().toLowerCase().replace(/\s+/g,&quot;&quot;).replace(/[\u200B-\u200D\uFEFF]/g,&quot;&quot;).replace(/[+]/g,&quot;plus&quot;).normalize(&quot;NFD&quot;).replace(/[\u0300-\u036f]/g,&quot;&quot;):&quot;&quot;}function s(e,t,n){const o=n.int[t]||[];return[...e,...o]}function d(e){return Array.from(e.querySelectorAll(&quot;a&quot;)).map(e=&gt;({normalized:l(e.innerText),original:e.innerText.trim(),element:e}))}function c(e,t={}){const n=document.createElement(e);return Object.assign(n.style,t),n}function u(e,t){const n=t[e];if(!n)return void alert(&quot;Error: Locale not found: &quot;+e);const o=document.querySelector(&quot;.glossary-panels.cp-container&quot;);if(!o)return void g(&quot;&lt;h2&gt;Error: Container Not Found&lt;/h2&gt;&quot;,!1,e,t);const r=d(o),a=new Set(r.map(e=&gt;e.normalized)),i=[...n.key,...t.universal.allowedEnglish],u=new Map(i.map(e=&gt;[l(e),e])),m=s(n.renamedOld,&quot;renamedOld&quot;,t),p=s(n.removed,&quot;removed&quot;,t),h=new Map(m.map(e=&gt;[l(e),e])),y=new Map(p.map(e=&gt;[l(e),e]));let f=!0,b={};const k=new Set;b.rule1={name:&quot;1. Removed Ingredients Are Not Present&quot;,failures:[],passed:!0},y.forEach((e,t)=&gt;{a.has(t)&amp;&amp;(b.rule1.failures.push(e),b.rule1.passed=!1,f=!1,k.add(t))}),b.rule2={name:&quot;2. Old/Renamed Names Are Not Present&quot;,failures:[],passed:!0},h.forEach((e,t)=&gt;{a.has(t)&amp;&amp;(b.rule2.failures.push(e),b.rule2.passed=!1,f=!1,k.add(t))}),b.rule3={name:&quot;3. Only Key Ingredients Are Linked&quot;,failures:[],passed:!0},r.forEach(e=&gt;{const t=e.normalized;k.has(t)||t&amp;&amp;!u.has(t)&amp;&amp;(b.rule3.failures.push(e.original),b.rule3.passed=!1,f=!1)}),b.rule4={name:&quot;4. All Key Ingredients Are Linked&quot;,failures:[],passed:!0},n.key.forEach(e=&gt;{const t=l(e);a.has(t)||(b.rule4.failures.push(e),b.rule4.passed=!1,f=!1)}),g(b,f,e,t)}function g(e,n,a,l){const s=document.getElementById(&quot;ingredientTestPanel&quot;);s&amp;&amp;s.remove();const d=c(&quot;div&quot;,{position:&quot;fixed&quot;,top:&quot;10px&quot;,right:&quot;10px&quot;,width:&quot;400px&quot;,maxWidth:&quot;90vw&quot;,maxHeight:&quot;90vh&quot;,overflowY:&quot;auto&quot;,background:&quot;white&quot;,border:`2px solid ${t.primary}`,borderRadius:&quot;12px&quot;,padding:&quot;20px&quot;,paddingTop:&quot;60px&quot;,boxShadow:&quot;0 8px 32px rgba(0,0,0,0.2)&quot;,zIndex:&quot;99999&quot;,fontFamily:&quot;Inter,sans-serif&quot;,fontSize:&quot;14px&quot;,lineHeight:&quot;1.5&quot;});d.id=&quot;ingredientTestPanel&quot;;const u=document.createElement(&quot;style&quot;);u.textContent=`#ingredientTestPanel::-webkit-scrollbar{width:8px}#ingredientTestPanel::-webkit-scrollbar-track{background:${t.light};border-radius:4px}#ingredientTestPanel::-webkit-scrollbar-thumb{background:${t.accent};border-radius:4px}`,document.head.appendChild(u);const g=c(&quot;div&quot;,{position:&quot;absolute&quot;,top:&quot;0&quot;,left:&quot;0&quot;,right:&quot;0&quot;,background:t.light,borderBottom:`2px solid ${t.border}`,borderRadius:&quot;12px 12px 0 0&quot;,padding:&quot;12px 16px&quot;,display:&quot;flex&quot;,justifyContent:&quot;space-between&quot;,alignItems:&quot;center&quot;,zIndex:&quot;100001&quot;}),m=c(&quot;button&quot;,{border:&quot;none&quot;,background:t.primary,padding:&quot;8px 16px&quot;,borderRadius:&quot;6px&quot;,fontSize:&quot;14px&quot;,cursor:&quot;pointer&quot;,color:&quot;white&quot;,fontWeight:&quot;600&quot;,display:&quot;flex&quot;,alignItems:&quot;center&quot;,gap:&quot;6px&quot;,transition:&quot;all 0.2s&quot;});m.innerHTML=&quot;🔄 Rerun Test&quot;,m.onclick=async()=&gt;{d.remove();const e=o();try{const t=await i();e.remove(),p(t)}catch(t){e.remove(),r(&quot;Failed to Reload&quot;,&quot;Could not fetch updated data.&quot;,t.message)}},m.onmouseover=()=&gt;{m.style.background=t.accent,m.style.transform=&quot;scale(1.05)&quot;},m.onmouseout=()=&gt;{m.style.background=t.primary,m.style.transform=&quot;scale(1)&quot;};const h=c(&quot;button&quot;,{border:`2px solid ${t.primary}`,background:&quot;white&quot;,width:&quot;36px&quot;,height:&quot;36px&quot;,borderRadius:&quot;6px&quot;,fontSize:&quot;20px&quot;,cursor:&quot;pointer&quot;,color:t.primary,fontWeight:&quot;bold&quot;,display:&quot;flex&quot;,alignItems:&quot;center&quot;,justifyContent:&quot;center&quot;,transition:&quot;all 0.2s&quot;});h.innerHTML=&quot;✕&quot;,h.onclick=()=&gt;d.remove(),h.onmouseover=()=&gt;{h.style.background=t.error,h.style.color=&quot;white&quot;,h.style.borderColor=t.error},h.onmouseout=()=&gt;{h.style.background=&quot;white&quot;,h.style.color=t.primary,h.style.borderColor=t.primary},g.appendChild(m),g.appendChild(h),d.appendChild(g);const y=c(&quot;div&quot;,{marginTop:&quot;5px&quot;,paddingRight:&quot;10px&quot;});y.innerHTML=function(e,o,r){let a=&quot;&quot;;if(o)a+=`&lt;div style=&quot;text-align:center;padding:20px;background:${t.success};color:white;border-radius:8px;margin-bottom:20px&quot;&gt;&lt;h2 style=&quot;margin:0;font-size:24px&quot;&gt;🥳 Nice Work! No issues found&lt;/h2&gt;&lt;p style=&quot;margin:10px 0 0 0;font-size:14px&quot;&gt;All ${Object.keys(e).length} rules passed for ${n[r]||r.toUpperCase()}.&lt;/p&gt;&lt;/div&gt;`;else{const o=Object.values(e).reduce((e,t)=&gt;e+t.failures.length,0);a+=`&lt;div style=&quot;padding:15px;background:${t.accent};color:white;border-radius:8px;margin-bottom:20px&quot;&gt;&lt;h2 style=&quot;margin:0;font-size:20px;color:white&quot;&gt;⚠️ QA Summary: ${o} Issue${1!==o?&quot;s&quot;:&quot;&quot;} Found&lt;/h2&gt;&lt;p style=&quot;margin:5px 0 0 0;font-size:14px;color:white&quot;&gt;Locale: &lt;strong&gt;${n[r]||r.toUpperCase()}&lt;/strong&gt;&lt;/p&gt;&lt;/div&gt;`}return Object.values(e).forEach(e=&gt;{const n=e.failures.length,o=e.passed?t.success:t.accent,r=e.passed?t.success:t.error;a+=`&lt;div style=&quot;margin:20px 0;border-left:4px solid ${o};padding-left:15px;background:${t.light};border-radius:4px&quot;&gt;&lt;h3 style=&quot;margin:0 0 10px 0;color:${t.primary};font-size:15px;display:flex;justify-content:space-between;align-items:center;padding-top:10px&quot;&gt;&lt;span&gt;${e.name}&lt;/span&gt;&lt;span style=&quot;background:${r};color:white;padding:3px 10px;border-radius:4px;font-size:12px;font-weight:700&quot;&gt;${n} ${1===n?&quot;failure&quot;:&quot;failures&quot;}&lt;/span&gt;&lt;/h3&gt;`,e.passed?a+=`&lt;p style=&quot;margin:8px 0 10px 0;color:${t.success};font-weight:600&quot;&gt;✓ PASSED&lt;/p&gt;`:(a+=`&lt;ul style=&quot;margin:8px 0 10px 0;padding-left:0;list-style:none;max-height:150px;overflow-y:auto&quot;&gt;`,e.failures.forEach(e=&gt;{a+=`&lt;li style=&quot;margin:4px 0;color:${t.primary};border-bottom:1px dashed #eee;padding-bottom:4px&quot;&gt;&lt;strong style=&quot;color:${t.error}&quot;&gt;${e}&lt;/strong&gt;&lt;/li&gt;`}),a+=&quot;&lt;/ul&gt;&quot;),a+=&quot;&lt;/div&gt;&quot;}),a}(e,n,a),d.appendChild(y),document.body.appendChild(d)}function p(e){const o=document.getElementById(&quot;localeSelector&quot;);o&amp;&amp;o.remove();const r=Object.keys(e).filter(e=&gt;&quot;universal&quot;!==e).filter(t=&gt;e[t].key&amp;&amp;e[t].key.length&gt;0).sort((e,t)=&gt;&quot;int&quot;===e?-1:&quot;int&quot;===t?1:n[e].localeCompare(n[t])),a=c(&quot;div&quot;,{position:&quot;fixed&quot;,top:&quot;0&quot;,left:&quot;0&quot;,width:&quot;100%&quot;,height:&quot;100%&quot;,background:&quot;rgba(0,0,0,0.75)&quot;,display:&quot;flex&quot;,justifyContent:&quot;center&quot;,alignItems:&quot;center&quot;,zIndex:&quot;999999&quot;,fontFamily:&quot;Inter,sans-serif&quot;});a.id=&quot;localeSelector&quot;;const i=c(&quot;div&quot;,{background:&quot;white&quot;,borderRadius:&quot;12px&quot;,padding:&quot;40px&quot;,boxShadow:&quot;0 12px 48px rgba(0,0,0,0.5)&quot;,maxWidth:&quot;450px&quot;,maxHeight:&quot;80vh&quot;,overflowY:&quot;auto&quot;,width:&quot;90%&quot;,textAlign:&quot;center&quot;});i.innerHTML=`&lt;h2 style=&quot;margin:0 0 10px 0;color:${t.primary};font-size:28px&quot;&gt;🧪 Ingredients QA Helper&lt;/h2&gt;&lt;p style=&quot;margin:0 0 30px 0;color:#666;font-size:16px&quot;&gt;Welcome! Please select a locale to begin testing:&lt;/p&gt;&lt;div id=&quot;localeButtons&quot; style=&quot;display:flex;flex-direction:column;gap:10px;margin-bottom:25px&quot;&gt;&lt;/div&gt;&lt;div style=&quot;display:flex;justify-content:flex-end;gap:10px&quot;&gt;&lt;button id=&quot;cancelBtn&quot; style=&quot;padding:12px 20px;border:2px solid ${t.border};background:white;border-radius:6px;font-size:14px;font-weight:600;cursor:pointer;color:${t.primary};transition:all 0.2s&quot;&gt;Cancel&lt;/button&gt;&lt;/div&gt;`,a.appendChild(i),document.body.appendChild(a);const l=i.querySelector(&quot;#localeButtons&quot;),s=i.querySelector(&quot;#cancelBtn&quot;);r.forEach(o=&gt;{const r=c(&quot;button&quot;,{padding:&quot;14px&quot;,border:`2px solid ${t.primary}`,background:t.primary,color:&quot;white&quot;,borderRadius:&quot;8px&quot;,fontSize:&quot;16px&quot;,fontWeight:&quot;700&quot;,cursor:&quot;pointer&quot;,transition:&quot;all 0.2s&quot;,boxShadow:&quot;0 2px 4px rgba(0,0,0,0.1)&quot;}),i=n[o]||o.toUpperCase();r.textContent=`${i}: ${o.toUpperCase()}`,r.onmouseover=()=&gt;{r.style.background=t.accent,r.style.borderColor=t.accent},r.onmouseout=()=&gt;{r.style.background=t.primary,r.style.borderColor=t.primary},r.onclick=()=&gt;{a.remove(),setTimeout(()=&gt;u(o,e),100)},l.appendChild(r)}),s.onclick=()=&gt;a.remove(),a.onclick=e=&gt;{e.target===a&amp;&amp;a.remove()}}(async()=&gt;{if(!document.body)return void r(&quot;Page Not Ready&quot;,&quot;Please wait for the page to fully load.&quot;);if(!document.querySelector(&quot;.glossary-panels.cp-container&quot;))return void r(&quot;Wrong Page&quot;,&quot;Make sure you're on an ingredients database page (e.g., https://int.eucerin.com/our-research/ingredients)&quot;);const e=o();try{const t=await i();e.remove(),p(t)}catch(t){e.remove(),r(&quot;Failed to Load Data&quot;,&quot;Could not fetch data from Google Sheets.&quot;,t.message),console.error(&quot;QA Tool Error:&quot;,t)}})()})();" class="drag-link">📌 Ingredients QA Tool v3.1</a>
+        <p style="margin-top:1rem; color:#666; font-size:0.9rem;">💡 <strong>Tip:</strong> Make sure your bookmarks bar is visible (Ctrl+Shift+B or Cmd+Shift+B)</p>
+    </div>
+</div>
+
+<div class="box">
+<h2>✅ Features (v3.1)</h2>
+    <ul style="line-height:1.8;">
+        <li>🔄 <strong>Auto-fetches data from online spreadsheet</strong> <span class="feature-badge">NEW!</span></li>
+        <li>⚡ <strong>Cache-busting</strong> - Always fetches latest data <span class="feature-badge">FIXED!</span></li>
+        <li>🔄 <strong>Rerun button</strong> - Re-fetches fresh data <span class="feature-badge">FIXED!</span></li>
+        <li>✨ No need to regenerate script when data changes</li>
+        <li>🌍 Supported Locales: INT, AT, BG, ES, FR, HU, PL, RO, RS</li>
+        <li>🚀 4 QA rules:
+            <ul>
+                <li>All <strong>key ingredients</strong> are linked</li>
+                <li>Old/renamed names are <u>not</u> present</li>
+                <li><strong>Removed</strong> ingredients are <u>not</u> present</li>
+                <li><strong>Only</strong> key ingredients are linked</li>
+            </ul>
+        </li>
+        <li>⚠️ Smart error handling</li>
+    </ul>
+</div>
+
+<div class="box">
+<h2>📖 How to Use</h2>
+<ol style="line-height:2;">
+<li>Navigate to ingredients page</li>
+<li>Click the bookmarklet in your bookmarks bar</li>
+<li>Wait 2-3 seconds for data to load</li>
+<li>Select locale from the modal (INT first, then alphabetical)</li>
+<li>Review QA results</li>
+<li><strong>Click "Rerun Test"</strong> to fetch latest data and test again</li>
+</ol>
+</div>
+
+<div class="box" style="background:#fffbeb;border-color:#f59e0b;">
+<h2 style="color:#92400e;">⚙️ How It Works</h2>
+<p style="color:#78350f;line-height:1.8;">
+This version automatically fetches the latest ingredient data from your database document every time you run the QA test:
+</p>
+<ul style="color:#78350f;line-height:1.8;">
+<li>✅ <strong>Cache-busting</strong> ensures you always get fresh data</li>
+<li>✅ Just edit your database document - no script updates needed</li>
+<li>✅ <strong>Rerun button</strong> re-fetches data without page reload</li>
+<li>✅ Perfect for frequent updates and team collaboration</li>
+</ul>
+</div>
+
+<footer style="text-align:center; margin-top:3rem; color:#666; border-top:2px solid #eee; padding-top:2rem;">
+<p><strong>Version 3.1</strong> | October 24, 2025</p>
+<p>Concept and development by Laura Rodd</p>
+</footer>
+
+</body>
+</html>
