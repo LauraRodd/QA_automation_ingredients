@@ -1,6 +1,6 @@
 # 🧪 QA Automation for Ingredient Validation
 
-This project automates **quality assurance checks** for ingredient data across multilingual Beiersdorf websites.  
+This project automates **quality assurance checks** for ingredient data across multilingual Brand websites.  
 It ensures ingredient lists are complete, correctly localized, and consistent across markets.
 
 ---
