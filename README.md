@@ -49,7 +49,7 @@ It ensures ingredient lists are complete, correctly localized, and consistent ac
 - DOM parsing for validation
 
  ## Test it out:
-[Ingredients QA Script](Ingredients_DocumentationV9_public.html)
+[Ingredients QA Script](https://laurarodd.github.io/QA_automation_ingredients/Ingredients_DocumentationV9_public.html)
   
 
 ---
