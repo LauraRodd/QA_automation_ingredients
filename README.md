@@ -46,7 +46,11 @@ It ensures ingredient lists are complete, correctly localized, and consistent ac
 
 - JavaScript (browser-based)  with SheetJS 
 - Excel / Google drive integration  
-- DOM parsing for validation  
+- DOM parsing for validation
+
+ ## Test it out:
+[Ingredients QA Script](Ingredients_DocumentationV9_public.html)
+  
 
 ---
 
