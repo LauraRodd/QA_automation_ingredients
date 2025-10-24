@@ -7,7 +7,7 @@ It ensures ingredient lists are complete, correctly localized, and consistent ac
 
 ## 🔍 What It Does
 
-- Fetches ingredient data from a **SharePoint Excel library**  
+- Fetches ingredient data from a **Google Drive Excel library**  using SheetJS library 
 - Compares website content with the reference list to detect:
   - Missing or mismatched ingredients  
   - Localization or spelling inconsistencies  
@@ -18,7 +18,7 @@ It ensures ingredient lists are complete, correctly localized, and consistent ac
 
 ## ⚙️ How It Works
 
-1. The script reads the ingredient reference file stored in SharePoint  
+1. The script reads the ingredient reference file stored in Google Drive  
 2. It scans the live or staging website content  
 3. Discrepancies are reported in a visual panel for quick review and correction
 
@@ -44,8 +44,8 @@ It ensures ingredient lists are complete, correctly localized, and consistent ac
 
 ## 🧰 Technologies
 
-- JavaScript (browser-based)  
-- Excel / SharePoint integration  
+- JavaScript (browser-based)  with SheetJS 
+- Excel / Google drive integration  
 - DOM parsing for validation  
 
 ---
